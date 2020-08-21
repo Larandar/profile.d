@@ -1,0 +1,42 @@
+
+[alias]
+	identity = "! git config user.name \"$(git config user.$1.name)\"; git config user.email \"$(git config user.$1.email)\"; git config user.signingkey \"$(git config user.$1.signingkey)\"; :"
+	
+	s = status
+	co = checkout
+	
+	l = log --pretty=oneline --abbrev-commit -n 20
+	ll = log --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+	amend = commit --amend
+	diffcommit = "!f() { git difftool $1~..$1; }; f"
+	modified-files = !sh -c 'git diff --name-only $(git merge-base origin/dev HEAD)..HEAD'
+
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = nvim
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	program = gpg
+
+
+[user]
+	useConfigOnly = true
+
+[user "default"]
+	name = Adrien 'Larandar' DUDOUIT-EXPOSITO
+	email = adrien@dudouit.me
+	signingkey = adrien@dudouit.me 
+
+[user "veolia"]
+	name = Adrien DUDOUIT-EXPOSITO
+	email = adrien.dudouit.ext@veolia.com
+	signingkey = adrien@dudouit.me
+
+[user "sfeir"]
+	name = Adrien DUDOUIT-EXPOSITO
+	email = dudouit.a@sfeir.com
+	signingkey = adrien@dudouit.me
