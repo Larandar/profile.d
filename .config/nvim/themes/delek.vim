@@ -1,0 +1,3 @@
+" General configs
+colorscheme delek
+
