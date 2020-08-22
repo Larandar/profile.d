@@ -14,5 +14,8 @@ for i in $PROFILE_DIR/modules/*/init.zsh(N);      do source $i; done
 for i in $PROFILE_DIR/modules/*/post-init.zsh(N); do source $i; done
 
 # Source all aliases
-for i in $PROFILE_DIR/aliases/*.zsh; do source $i; done
+for i in $PROFILE_DIR/aliases/*.zsh(N); do source $i; done
+
+# Utilities and custom functions
+for i in $PROFILE_DIR/functions/*.zsh(N); do source $i; done
 
