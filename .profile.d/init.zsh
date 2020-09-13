@@ -2,9 +2,12 @@ export PROFILE_DIR=$HOME/.profile.d
 
 alias profile="git --git-dir=$PROFILE_DIR/.git --work-tree=$HOME"
 
+# Install profile.d on first run
 [[ ! -d $HOME/.profile.d/.git ]] && function () {
-    git clone --bare git@gitlab.com:larandar/.profile.d.git $PROFILE_DIR/.git
+    git clone --bare https://github.com/Larandar/profile.d.git $PROFILE_DIR/.git
     profile config --local status.showUntrackedFiles no
+    profile config --local alias.edit '!vi $PROFILE_DIR'
+    profile config --local alias.cd   '!cd $PROFILE_DIR'
     profile checkout
 }
 
