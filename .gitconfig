@@ -12,6 +12,18 @@
 	diffcommit = "!f() { git difftool $1~..$1; }; f"
 	modified-files = !sh -c 'git diff --name-only $(git merge-base origin/dev HEAD)..HEAD'
 
+
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = "code --wait --diff $LOCAL $REMOTE"
+
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = "code --wait $MERGED"
+
+
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = nvim
@@ -40,3 +52,5 @@
 	name = Adrien DUDOUIT-EXPOSITO
 	email = dudouit.a@sfeir.com
 	signingkey = adrien@dudouit.me
+
+
