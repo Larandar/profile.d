@@ -6,8 +6,7 @@ alias profile="git --git-dir=$PROFILE_DIR/.git --work-tree=$HOME"
 [[ ! -d $HOME/.profile.d/.git ]] && function () {
     git clone --bare https://github.com/Larandar/profile.d.git $PROFILE_DIR/.git
     profile config --local status.showUntrackedFiles no
-    profile config --local alias.edit '!vi $PROFILE_DIR'
-    profile config --local alias.cd   '!cd $PROFILE_DIR'
+    profile config --local alias.edit '!nvim $PROFILE_DIR'
     profile checkout
 }
 
