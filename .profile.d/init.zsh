@@ -8,6 +8,8 @@ alias profile="git --git-dir=$PROFILE_DIR/.git --work-tree=$HOME"
     profile config --local status.showUntrackedFiles no
     profile config --local alias.edit '!nvim $PROFILE_DIR'
     profile checkout
+    profile remote set-url origin git@github.com:Larandar/profile.d.git
+    profile identity default
 }
 
 # Source all activated
