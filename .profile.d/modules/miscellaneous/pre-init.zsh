@@ -5,3 +5,8 @@ case `uname -s` in
     Linux*)     for i in `dirname ${(%):-%N}`/pre-init/{linux,unix}.*.zsh(N); do source $i; done;;
     *)          echo "The platform '$(uname -s)' is not handled during inialization."
 esac
+
+case `which powershell.exe` in
+    *WINDOWS/System32*) for i in `dirname ${(%):-%N}`/pre-init/wsl.*.zsh(N); do source $i; done;;
+esac
+
