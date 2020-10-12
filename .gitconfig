@@ -37,6 +37,7 @@
 
 [user]
 	useConfigOnly = true
+	name = Adrien
 
 [user "default"]
 	name = Adrien 'Larandar' DUDOUIT-EXPOSITO
@@ -54,3 +55,7 @@
 	signingkey = adrien@dudouit.me
 
 
+[pull]
+	rebase = true
+[push]
+	followTags = true
