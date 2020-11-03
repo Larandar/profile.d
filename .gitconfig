@@ -6,7 +6,7 @@
 	co = checkout
 	
 	l = log --pretty=oneline --abbrev-commit -n 20
-	ll = log --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	ll = log --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 	amend = commit --amend
 	diffcommit = "!f() { git difftool $1~..$1; }; f"
