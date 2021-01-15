@@ -1,10 +1,10 @@
 
 [alias]
 	identity = "! git config user.name \"$(git config user.$1.name)\"; git config user.email \"$(git config user.$1.email)\"; git config user.signingkey \"$(git config user.$1.signingkey)\"; :"
-	
+
 	s = status
 	co = checkout
-	
+
 	l = log --pretty=oneline --abbrev-commit -n 20
 	ll = log --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit
 
@@ -18,6 +18,7 @@
 [difftool "vscode"]
 	cmd = "code --wait --diff $LOCAL $REMOTE"
 
+
 [merge]
 	tool = vscode
 [mergetool "vscode"]
@@ -28,34 +29,31 @@
 	excludesfile = ~/.gitignore_global
 	editor = nvim
 
+
 [commit]
 	gpgsign = true
-
 [gpg]
 	program = gpg
 
 
 [user]
 	useConfigOnly = true
-	name = Adrien
-
 [user "default"]
 	name = Adrien 'Larandar' DUDOUIT-EXPOSITO
 	email = adrien@dudouit.me
-	signingkey = adrien@dudouit.me 
-
+	signingkey = adrien@dudouit.me
 [user "veolia"]
 	name = Adrien DUDOUIT-EXPOSITO
 	email = adrien.dudouit.ext@veolia.com
 	signingkey = adrien@dudouit.me
-
 [user "sfeir"]
 	name = Adrien DUDOUIT-EXPOSITO
 	email = dudouit.a@sfeir.com
 	signingkey = adrien@dudouit.me
 
-
 [pull]
 	rebase = true
 [push]
 	followTags = true
+[rerere]
+	enable = true
